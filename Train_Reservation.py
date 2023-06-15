@@ -47,30 +47,35 @@ t1 = Train("GaribRath Express", seat, 500, t_seat)
 
 train = True
 
-while train:
-    print('''
-    Choose from the following options :
-    1) Get Status of the Train
-    2) Get Fare information of train
-    3) Book Tickets
-    4) Cancel Ticket
-    5) Quit
-    ''')
 
-    user = int(input("Enter your choice : "))
-    if user == 1:
-        t1.getStatus()
-    elif user == 2:
-        t1.getFareInfo()
-    elif user == 3:
-        t1.bookTicket()
-    elif user == 4:
-        a = int(input("\nEnter seat number to cancel : "))
-        t1.seatno = a
-        t1.cancelTicket()
-    elif user == 5:
-        train = False
-    else:
-        print("\nEnter Valid Choice !!")
+while train:
+    try:
+        print('''
+        Choose from the following options :
+        1) Get Status of the Train
+        2) Get Fare information of train
+        3) Book Tickets
+        4) Cancel Ticket
+        5) Quit
+        ''')
+
+        user = int(input("Enter your choice : "))
+        if user == 1:
+            t1.getStatus()
+        elif user == 2:
+            t1.getFareInfo()
+        elif user == 3:
+            t1.bookTicket()
+        elif user == 4:
+            a = int(input("\nEnter seat number to cancel : "))
+            t1.seatno = a
+            t1.cancelTicket()
+        elif user == 5:
+            train = False
+        else:
+            print("\nEnter Valid Choice !!")
+
+    except Exception as e:
+        print("Please enter a valid choice..")
 
 print("\nThank you !! Visit again..\n")
