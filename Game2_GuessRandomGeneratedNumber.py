@@ -2,7 +2,7 @@
 import random
 
 randno = random.randint(1,100)
-print(randno)
+
 user = None
 count = 0
 
